@@ -29,9 +29,9 @@ export default function App () {
 
   const addToSavedList = id => {
     console.log('addToSavedList id', id)
-    // if (saved.indexOf(id) === -1){
-      setSaved([id]);
-    // }
+    if (saved.indexOf(id) === -1){
+      setSaved([...saved, id]);
+    }
     console.log(saved)
     console.log('addToSavedList in App.js');
     // This is stretch. Prevent the same movie from being "saved" more than once

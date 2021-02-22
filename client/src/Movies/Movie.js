@@ -55,7 +55,7 @@ export default function Movie(props) {
           </div>
         ))}
       </div>
-      <div className="save-button" onClick={addToSavedList}>Save</div>
+      <div className="save-button" onClick={() => addToSavedList(id)}>Save</div>
     </div>
   );
 }
