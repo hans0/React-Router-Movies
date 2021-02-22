@@ -5,11 +5,13 @@ import { useParams, useRouteMatch } from 'react-router-dom';
 export default function Movie(props) {
   const [movie, setMovie] = useState();
 
+  const { addToSavedList } = props;
   // let id = 1;
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
   const { path, url } = useRouteMatch();
   const { id } = useParams();
 
+  console.log(props);
 
   useEffect(() => {
     axios
@@ -35,7 +37,6 @@ export default function Movie(props) {
   }
 
   const { title, director, metascore, stars } = movie;
-
   return (
     <div className="save-wrapper">
       <div className="movie-card">
@@ -54,7 +55,7 @@ export default function Movie(props) {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={addToSavedList}>Save</div>
     </div>
   );
 }
