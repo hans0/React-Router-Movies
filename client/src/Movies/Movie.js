@@ -11,8 +11,6 @@ export default function Movie(props) {
   const { path, url } = useRouteMatch();
   const { id } = useParams();
 
-  console.log(props);
-
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman

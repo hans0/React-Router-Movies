@@ -29,23 +29,21 @@ export default function App () {
   }, []);
 
   const addToSavedList = id => {
-    console.log('addToSavedList id', id)
-    if (saved.indexOf(id) === -1){
-      setSaved([...saved, id]);
-    }
+    // console.log('addToSavedList id', id)
+    // if (saved.indexOf(id) === -1){
+    //   setSaved([...saved, id]);
+    // }
     axios.get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        console.log(response.data.title);
+        // console.log(response.data.title);
         if (saved.indexOf(id) === -1){
           setSaved([...saved, id]);
           setSavedNames([...savedNames, response.data.title]);
         }
       })
       .catch(error => {
-        console.log(error)
+        console.log(`ERROR: `, error)
       })
-    // console.log(saved)
-    // console.log('addToSavedList in App.js');
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
