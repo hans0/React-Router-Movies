@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function SavedList(props) {
   
-  const { list } = props;
+  const { list, savedNames } = props;
 
 
   console.log(`SavedList list `, list);
@@ -13,7 +13,7 @@ export default function SavedList(props) {
     <div className="saved-list">
       <h3>Saved Movies:</h3>
         {/* trying to figure out how to make a call for each of these movies */}
-        {props.list.map(m => (
+        {savedNames.map(m => (
             <div>{m}</div>
           )
         )}
